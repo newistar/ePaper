@@ -4,200 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
-    android:background="@color/white"
     android:orientation="vertical"
+    android:background="#E0E0E0"
     tools:context=".MainActivity">
 
-    <WebView
-        android:id="@+id/webview"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
-    </WebView>
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme"
+        app:logo="@drawable/ic_news_blue_24dp"
+        app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
+        app:title="@string/app_name"
+        app:titleMarginStart="24dp"
+        app:titleTextColor="@android:color/white" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/list"
+    <FrameLayout
+        android:id="@+id/filter_bar_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="12dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/filter_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:elevation="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/amarujala"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#F44336"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Amar Ujala"
-                        style="@style/TextStyle" />
-                </android.support.v7.widget.CardView>
+                <Spinner
+                    android:id="@+id/paper_list_spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:layout_height="30dp">
+                </Spinner>
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/dainikjagran"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#E91E63"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Dainik Jagran"
-                        style="@style/TextStyle" />
+                <Spinner
+                    android:id="@+id/city_list_spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="0"
+                    android:layout_margin="2dp"
+                    android:layout_height="30dp">
+                </Spinner>
 
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/haribhui"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#9C27B0"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="HariBhumi"
-                        style="@style/TextStyle" />
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/dainikbhaskar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#673AB7"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Dainik Bhaskar"
-                        style="@style/TextStyle" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/hindustan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#3F51B5"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Hindustan"
-                        style="@style/TextStyle" />
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/jansatta"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#2196F3"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="JanSatta"
-                        style="@style/TextStyle" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/loktej"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#03A9F4"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Loktej"
-                        style="@style/TextStyle" />
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/naidunia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#00BCD4"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Nai Dunia"
-                        style="@style/TextStyle" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/navbharattimes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#009688"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Nav Bharat Times"
-                        style="@style/TextStyle" />
-
-                </android.support.v7.widget.CardView>
-
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/prabhatkhabar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#4CAF50"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Prabhat Khabar"
-                        style="@style/TextStyle" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/punjabkesari"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#FF9800"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Punjab Kesari"
-                        style="@style/TextStyle" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/patrika"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="#607D8B"
-                    android:onClick="onClick"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:text="Patrika"
-                        style="@style/TextStyle" />
-
-                </android.support.v7.widget.CardView>
+                <Spinner
+                    android:id="@+id/date_list_spinner"
+                    android:layout_width="0dp"
+                    android:layout_weight="0"
+                    android:layout_margin="2dp"
+                    android:layout_height="30dp">
+                </Spinner>
 
             </LinearLayout>
 
-        </ScrollView>
+        </android.support.v7.widget.CardView>
 
-    </android.support.v7.widget.CardView>
+    </FrameLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/paper__recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>
